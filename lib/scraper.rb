@@ -5,6 +5,7 @@ require_relative './course.rb'
 
 class Scraper
   
+<<<<<<< HEAD
     
     def get_page
       html = open('http://learn-co-curriculum.github.io/site-for-scraping/courses')
@@ -25,6 +26,19 @@ class Scraper
       end
     end
     
+=======
+    def get_page
+      html = open('http://learn-co-curriculum.github.io/site-for-scraping/courses')
+      @doc = Nokogiri::HTML(html)
+      binding.pry
+    end
+  
+    def get_courses
+      binding.pry
+      out = @doc.css('#course-grid .posts-holder p')
+    end 
+    
+>>>>>>> e8cdb6686b5bdc54299125f6d5aa8b135a05171f
     def print_courses
     self.make_courses
     Course.all.each do |course|
